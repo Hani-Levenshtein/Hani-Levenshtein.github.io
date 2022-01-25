@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello World!
+title: 일해라 티스토리
 ---
 
 <ul class="posts">
