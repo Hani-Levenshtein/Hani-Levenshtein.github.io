@@ -1,27 +1,13 @@
 /* Custom container */
-
-/* Replaced with normal container and standard footer */
-/*.container-narrow {
+.container-narrow {
   margin: 0 auto;
-  max-width: 700px; }
+  max-width: 800px; }
 
 .container-narrow > hr {
   margin: 30px 0; }
-*/
 
-/* Replaced with standard BS3 Navbar */
-/*.navbar .nav {
-  float: right; }*/
-
-/* Jekyll Bootstrap Colors */
-h1, h2, h3, h4 {
-  color: #f22430;
-}
-#footer {
-  background-color: #fdcd60;
-}
-
-
+.navbar .nav {
+  float: right; }
 
 /* posts index */
 .post > h3.title {
@@ -77,3 +63,28 @@ h1, h2, h3, h4 {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+table {
+padding: 0; }
+table tr {
+border-top: 1px solid #cccccc;
+background-color: white;
+margin: 0;
+padding: 0; }
+table tr:nth-child(2n) {
+background-color: #f8f8f8; }
+table tr th {
+font-weight: bold;
+border: 1px solid #cccccc;
+text-align: left;
+margin: 0;
+padding: 6px 13px; }
+table tr td {
+border: 1px solid #cccccc;
+text-align: left;
+margin: 0;
+padding: 6px 13px; }
+table tr th :first-child, table tr td :first-child {
+margin-top: 0; }
+table tr th :last-child, table tr td :last-child {
+margin-bottom: 0; }

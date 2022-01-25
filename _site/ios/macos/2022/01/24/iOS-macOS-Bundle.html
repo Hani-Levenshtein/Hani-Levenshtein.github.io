@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>[iOS][macOS] Bundle</title>
+    <meta name="description" content="">
+    <meta name="author" content="이하원">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/theme/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/theme/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/theme/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">하니_레반슈타인</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+
+<div class="page-header">
+  <h1>[iOS][macOS] Bundle </h1>
+</div>
+
+<div class="row post-full">
+  <div class="col-xs-12">
+    <div class="date">
+      <span>24 January 2022</span>
+    </div>
+    <div class="content">
+      
+<h2 id="패키지란">패키지란</h2>
+
+<blockquote>
+  <p>A package is any directory that the Finder presents to the user as if it were a single file.</p>
+</blockquote>
+
+<p>패키지는 macOS의 Finder에서 디렉토리를 마치 하나의 파일인 것처럼 나타낸 것입니다.</p>
+
+<p>.app, .kext, <code>.bundle</code>, .framework, .plugin 등의 확장자가 패키지의 일종입니다.</p>
+
+<h2 id="번들이란">번들이란</h2>
+
+<blockquote>
+  <p>A bundle is a directory with a standardized hierarchical structure that holds executable code and the resources used by that code.</p>
+</blockquote>
+
+<p>번들은 실행가능한 코드와 코드가 사용하는 리소스를 캡슐화한 계층 구조를 갖는 디렉토리입니다.</p>
+
+<p>번들에 대한 예시로, 앱 번들에 한 번 접근해 보겠습니다.</p>
+
+<p style="text-align:center;">&lt;img src="http://Hani-Levenshtein.github.io/image/2022/01/24/01.png"</p>
+
+<p>Xcode - Preferences - Location - Derived Data 화살표 클릭</p>
+
+<p style="text-align:center;">&lt;img src="http://Hani-Levenshtein.github.io/image/2022/01/24/02.png"</p>
+
+<p>Build - Product - Debug - AppName 앱 번들 확인 가능</p>
+
+<p style="text-align:center;">&lt;img src="http://Hani-Levenshtein.github.io/image/2022/01/24/03.png"</p>
+
+<h2 id="번들의-구조">번들의 구조</h2>
+
+<p>번들의 구조는 번들의 타입과 플랫폼에 따라 다르지만, 번들을 사용하는 방식은 같습니다.</p>
+
+<h3 id="앱-번들">앱 번들</h3>
+
+<p>Xcode가 앱을 빌드하면 앱 번들을 생성하게 되며, 앱 번들은 앱을 작동시키는데 필요한 모든 리소스를 저장하고 있습니다.</p>
+
+<p>iOS 앱 번들과 macOS 앱 번들의 구조는 약간의 차이가 있으나 사용 방식에는 차이가 없습니다.</p>
+
+<h4 id="ios-앱-번들">iOS 앱 번들</h4>
+
+<pre><code>MyApp.app/
+   Info.plist
+   MyApp
+   Default.png
+   Icon.png
+   Hand.png
+   MainWindow.nib
+   MyAppViewController.nib
+   WaterSounds/
+      Water1.aiff
+      Water2.aiff
+   en_GB.lproj/
+      CustomView.nib
+      bird.png
+      Bye.txt
+      Localizable.strings
+   en_US.lproj/
+      CustomView.nib
+      bird.png
+      Bye.txt
+      Localizable.strings
+   jp.lproj/
+      CustomView.nib
+      bird.png
+      Bye.txt
+      Localizable.strings
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">파일</th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">AppName</td>
+      <td style="text-align: left">(필수)앱의 코드를 갖고 있는 Executable 파일입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">App Icon</td>
+      <td style="text-align: left">(필수/권장)홈 화면에서 보이는 앱 아이콘입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Info.plist</td>
+      <td style="text-align: left">(필수)bundle ID, version number, and display name 등 앱의 Configuration에 대한 정보를 가지고 있는 파일입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Launch image</td>
+      <td style="text-align: left">(권장)앱이 켜질 때 window와 UI를 로드하기 전에 보이는 이미지입니다. 없다면 검은 화면이 보입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MainWindow.nib</td>
+      <td style="text-align: left">(권장)앱의 launch time에 로드될 객체를 갖고 있는 nib 파일입니다. UISceneStoryboardFile 혹은 UIMainStoryboardFile에 사용자 정의 nib 이름을 사용할 수 있습니다. 포스팅 하단 <code>References</code> 에 달아놓은 도서에 의하면 NSMainNibFile는 더 이상 사용되지 않은 Property List Key입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Settings.bundle</td>
+      <td style="text-align: left">앱 설정과 관한 Preference를 추가할 수 있는 Plug-in 번들의 한 형태입니다. Property List 파일과 Preference 관련 리소스를 가지고 있습니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Custom resource files</td>
+      <td style="text-align: left">리소스는 nib, image, sound 등의 데이터입니다. 지역화되지 않은 리소스는 번들의 루트레벨에 있게 되지만, 지역화된 리소스는 <code>lproj</code> 패키지 아래에 존재하게 됩니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Internationalization(i18n)과 Localization(i10n)을 지원하기 위해선 <code>language_region.lproj</code> 패키지에 해당 언어에 맞는 리소스를 넣어줘야 합니다.</p>
+
+<p>i18n를 위한 language는 <code>ISO 639</code> 컨벤션을 따르고 i10n을 위한 region은 <code>ISO 3166</code> 컨벤션을 따릅니다.</p>
+
+<p>단, i18n/i10n를 신경쓰지 않을 경우 <code>Base.lproj</code> 패키지에 리소스가 존재하게 됩니다.</p>
+
+<h4 id="macos-앱-번들">macOS 앱 번들</h4>
+
+<pre><code>MyApp.app/
+   Contents/
+      Info.plist
+      MacOS/
+         MyApp
+      Resources/
+         Hand.tiff
+         MyApp.icns
+         WaterSounds/
+            Water1.aiff
+            Water2.aiff
+         en.lproj/
+            MyApp.nib
+            bird.tiff
+            Bye.txt
+            InfoPlist.strings
+            Localizable.strings
+            CitySounds/
+               city1.aiff
+               city2.aiff
+         jp.lproj/
+            MyApp.nib
+            bird.tiff
+            Bye.txt
+            InfoPlist.strings
+            Localizable.strings
+            CitySounds/
+               city1.aiff
+               city2.aiff
+</code></pre>
+
+<p>macOS 앱 번들의 구조는 번들의 루트에 Contents 디렉토리가 있고, 이 디렉토리가 Info.plist, Executable File, 리소스 등을 모두 가지고 있는 형태입니다.</p>
+
+<p>Contents 디렉토리는 쓸모없어 보이지만 macOS 초기의 레거시 번들과 구분할 수 있게 해주는 역할을 합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">파일</th>
+      <th style="text-align: left">설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">MacOS</td>
+      <td style="text-align: left">(필수)앱의 코드를 갖고 있는 Executable 파일을 가지고 있는 디렉토리입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Resources</td>
+      <td style="text-align: left">앱의 모든 리소스를 가지고 있는 디렉토리입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Frameworks</td>
+      <td style="text-align: left">Executable 파일에 의해 사용되는 공유 라이브러리와 프레임워크를 갖고 있는 디렉토리입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PlugIns</td>
+      <td style="text-align: left">앱에 기능을 추가할 수 있는 로더블 번들을 갖고 있는 디렉토리입니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SharedSupport</td>
+      <td style="text-align: left">앱을 실행하는데 크게 중요하지 않은 부가적인 리소스를 갖고 있는 디렉토리입니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="프레임워크-번들">프레임워크 번들</h3>
+
+<pre><code>MyFramework.framework/
+   MyFramework  -&gt; Versions/Current/MyFramework
+   Resources    -&gt; Versions/Current/Resources
+   Versions/
+      A/
+         MyFramework
+         Headers/
+            MyHeader.h
+         Resources/
+            English.lproj/
+               InfoPlist.strings
+            Info.plist
+      Current  -&gt; A
+</code></pre>
+
+<p>프레임워크는 동적 공유 라이브러리와 그 라이브러리를 지원하기 위해 필요한 리소스를 캡슐화한 계층 디렉토리입니다.</p>
+
+<p>프레임워크는 동적 공유 라이브러리와 마찬가지로 하나만 메모리에 적재되어도 다수의 앱에서 공유할 수 있으나, 동적 공유 라이브러리와는 다르게 라이브러리와 리소스를 하나의 파일에서 제공할 수 있는 장점이 있습니다.</p>
+
+<p>단, 해당 프레임워크를 사용하는 앱들이 서로 다른 프레임워크 버젼을 원할 수 있기 때문에 <code>Versions</code> 디렉토리에서 ~~</p>
+
+<p>프레임워크의 코드와 읽기 전용 리소스만이 공유되며, writable한 변수가 있다면 다수의 앱이 의도치않은 공유를 하지 않도록 각 앱이 개별적으로 변수를 복사하여 갖게 됩니다.</p>
+
+<h3 id="로더블lodable-번들">로더블(Lodable) 번들</h3>
+
+<pre><code>MyLoadableBundle.bundle
+   Contents/
+      Info.plist
+      MacOS/
+         MyLoadableBundle
+      Resources/
+         Lizard.jpg
+         MyLoadableBundle.icns
+         en.lproj/
+            MyLoadableBundle.nib
+            InfoPlist.strings
+         jp.lproj/
+            MyLoadableBundle.nib
+            InfoPlist.strings
+</code></pre>
+
+<p>plugin을 비롯한 다른 로더블 번들은 앱을 동적으로 확장시킬 수 있는 방법을 제공합니다.</p>
+
+<p>로더블 번들은 실행가능한 코드와 그 코드를 실행하기 위해 필요한 리소스로 구성되어 있습니다.</p>
+
+<p>단, iOS에서는 로더블 번들을 생성하거나 사용할 수 없습니다.</p>
+
+<h2 id="번들에-있는-localized된-리소스">번들에 있는 localized된 리소스</h2>
+
+<pre><code>Resources/
+   MyApp.icns
+   en_GB.lproj/
+      MyApp.nib
+      bird.tiff
+      Localizable.strings
+   en_US.lproj/
+      MyApp.nib
+      Localizable.strings
+   en.lproj/
+      MyApp.nib
+      bird.tiff
+      Bye.txt
+      house.jpg
+      InfoPlist.strings
+      Localizable.strings
+      CitySounds/
+         city1.aiff
+         city2.aiff
+</code></pre>
+
+<p>앱 번들을 소개하면서 i18n, i10n에 대하여 다뤘기 때문에 추가적인 내용만을 언급하자면, 리소스를 찾는 순서는 <code>language_region.lproj</code>, <code>language.lproj</code>, <code>region.lproj</code>, <code>non-localized resource</code> 입니다.</p>
+
+<h2 id="내-프로젝트-앱-번들">내 프로젝트 앱 번들</h2>
+
+<p>공식 문서를 통해 번들에 대하여 알아봤으니 제 프로젝트의 앱 번들은 어떤 구조를 가지고 있는지 알아보겠습니다.</p>
+
+<p>~~~</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i-CH1-SW1">Apple Bundle Programming Guide</a></li>
+  <li>[도서: iOS 7 Programming Pushing the Limits: Develop Advance Applications for Apple iPhone, iPad, and iPod Touch 1st Edition - <strong>72 Page</strong>]</li>
+</ul>
+
+    </div>
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-open"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/categories.html#iOS/MacOS-ref">
+    		iOS/MacOS <span>1</span>
+    	</a></li>
+    
+  
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#Bundle-ref">Bundle <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  
+    <hr>
+    <ul class="pagination">
+    
+      <li class="prev disabled"><a>&larr; Previous</a></li>
+    
+      <li><a href="/archive.html">Archive</a></li>
+    
+      <li class="next disabled"><a>Next &rarr;</a>
+    
+    </ul>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2022 이하원
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/theme/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
